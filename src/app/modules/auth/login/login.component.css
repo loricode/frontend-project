@@ -1,0 +1,16 @@
+.container-general{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+.grid-container-card {
+   max-width: 380px;
+}
+
+.grid-custom {
+   display: flex;
+   flex-direction: column;
+}
+
