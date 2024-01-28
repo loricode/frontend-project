@@ -1,0 +1,17 @@
+.container-chat{
+   display: flex;
+}
+
+.list-chat{
+   flex-basis: 20%;
+}
+
+.single-chat{
+   flex-basis: 80%;
+}
+
+.list-item-people {
+   list-style: none;
+   margin: 0;
+   padding-inline-start: 0px;
+}

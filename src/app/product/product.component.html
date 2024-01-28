@@ -1,0 +1,9 @@
+<ul class="list-item-people">
+   @for (item of products; track item.id) {
+      <li mat-menu-item>
+          {{item.name}} {{item.price}}
+      </li>
+    } @empty {
+
+    }
+   </ul>

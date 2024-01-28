@@ -7,7 +7,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 
-
+//service 
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -27,12 +28,17 @@ export class LoginComponent {
   })
 
   //se inyecta el formBuilder
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private authService: AuthService,
+    private formBuilder: FormBuilder) {}
 
 
    login = () => {
     //de esta clase loginComponent
      //this.authForm.value
+     this.authService.login().then((res:any) => {
+      console.log(res)
+     })
       console.log("click", this.authForm.value)
    }
 

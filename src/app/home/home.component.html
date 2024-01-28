@@ -1,0 +1,29 @@
+<mat-card class="grid-container-card">
+   <form [formGroup]="notificationForm" >
+
+ 
+   <mat-card-content class="grid-custom">
+      <mat-form-field appearance="outline">
+         <mat-label>Description</mat-label>
+         <input formControlName="description" matInput>
+       </mat-form-field>
+
+       <mat-form-field appearance="outline">
+         <mat-label>Due date</mat-label>
+         <input [matDatepicker]="picker" formControlName="due_date" matInput>
+         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+         <mat-datepicker #picker></mat-datepicker>
+       </mat-form-field>
+
+       <button (click)="addNotification()" mat-raised-button color="primary">Primary</button>
+
+   </mat-card-content>
+   </form>
+ </mat-card>
+
+ <ul>
+  <li *ngFor="let item of notificacionList">
+    <p>{{ item.dueDate }}</p>
+    <p>{{item.elapsedTime}}</p>
+  </li>
+ </ul>

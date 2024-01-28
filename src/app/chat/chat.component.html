@@ -1,0 +1,39 @@
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu" toggleMenu>
+   <ul class="list-item-people">
+   @for (item of people; track item.id) {
+      <li mat-menu-item>
+        <mat-checkbox (change)="handleToggle(item.id)" class="example-margin">
+          {{item.fullName}}
+        </mat-checkbox>
+      </li>
+    } @empty {
+
+    }
+   </ul>
+
+   <button (click)="saveNewChat()">Aceptar</button>
+
+</mat-menu>
+
+<div class="container-chat">
+   
+   <div class="list-chat">
+
+      <mat-list role="list">
+        @for (item of users; track item.id) {
+           <mat-list-item role="listitem">
+            {{item.name}}
+           </mat-list-item>
+         } @empty {
+
+         }
+       </mat-list>
+
+   </div>
+
+   <div class="single-chat">
+
+   </div>
+
+</div>
